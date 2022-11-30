@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {EventEmitter, Injectable} from '@angular/core';
 import { Sensor } from '../Sensor';
 import { Sensorendata } from '../Sensorendata';
 
@@ -6,9 +6,19 @@ import { Sensorendata } from '../Sensorendata';
   providedIn: 'root'
 })
 export class StoreService {
+  public dataHasUpdated = new EventEmitter();
 
-  public sensorenDaten: Sensorendata[] = [];
+  private _sensorenDaten: Sensorendata[] = [];
   public sensoren: Sensor[] = [];
 
   constructor() { }
+
+  public set sensorenDaten(v: Sensorendata[]) {
+    this._sensorenDaten = v;
+    this.dataHasUpdated.emit();
+  }
+
+  public get sensorenDaten(): Sensorendata[] {
+    return this._sensorenDaten;
+  }
 }
