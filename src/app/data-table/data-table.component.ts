@@ -6,6 +6,7 @@ import { DataTableDataSource, DataTableItem } from './data-table-datasource';
 import {StoreService} from "../shared/store.service";
 import {Subscription} from "rxjs";
 import {BackendService} from "../shared/backend.service";
+import { SensorPosition } from '../Sensor';
 
 
 @Component({
@@ -18,6 +19,10 @@ export class DataTableComponent implements AfterViewInit, OnDestroy {
   @ViewChild(MatSort) sort!: MatSort;
 
   dataSource!: MatTableDataSource<any>;
+
+  public get SensorPosition() {
+    return SensorPosition;
+  }
 
   private storeServiceSubscription?: Subscription;
 

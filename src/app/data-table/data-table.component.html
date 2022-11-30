@@ -39,7 +39,7 @@
     <!-- Spalte Position -->
     <ng-container matColumnDef="position">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Position</th>
-      <td mat-cell *matCellDef="let row">{{row.sensor.position}}</td>
+      <td mat-cell *matCellDef="let row">{{SensorPosition[row.sensor.position]}}</td>
     </ng-container>
 
     <!-- Eintrag Löschen -->
