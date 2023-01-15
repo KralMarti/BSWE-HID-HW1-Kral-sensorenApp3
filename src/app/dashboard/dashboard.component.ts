@@ -12,9 +12,10 @@ export class DashboardComponent implements OnInit {
   constructor(private backendService: BackendService, private storeService: StoreService) { }
 
   async ngOnInit() {
-    
+    this.storeService.isLoading = true;
     await this.backendService.getSensoren();
     await this.backendService.getSensorenDaten();
+    this.storeService.isLoading = false;
   }
 
 }

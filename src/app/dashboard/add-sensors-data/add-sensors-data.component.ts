@@ -24,9 +24,15 @@ export class AddSensorsDataComponent implements OnInit {
 
   async onSubmit() {
     if(this.sensorenDataForm?.valid) {
+      this.storeService.isLoading = true;
       await this.backendService.addSensorsData(this.sensorenDataForm.value);
-      this.sensorenDataForm.reset();
+      this.sensorenDataForm.reset()
+      this.storeService.isLoading = false;
     }
-  }
 
+
+
+
+
+  }
 }
