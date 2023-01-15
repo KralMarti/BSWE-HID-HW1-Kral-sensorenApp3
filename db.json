@@ -1,13 +1,6 @@
 {
   "sensorsData": [
     {
-      "sensorId": 3,
-      "temperature": 12,
-      "humidity": 84,
-      "date": "2022-02-29",
-      "id": 7
-    },
-    {
       "sensorId": 2,
       "temperature": 19,
       "humidity": 41,
@@ -314,6 +307,13 @@
       "humidity": 2,
       "date": "2023-01-09T23:00:00.000Z",
       "id": 54
+    },
+    {
+      "sensorId": 1,
+      "temperature": 25,
+      "humidity": 25,
+      "date": "2023-01-09T23:00:00.000Z",
+      "id": 55
     }
   ],
   "sensors": [

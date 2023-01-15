@@ -25,6 +25,7 @@ import { MatSortModule } from '@angular/material/sort';
 import {MatMenuModule} from "@angular/material/menu";
 import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import {MatSnackBarModule} from "@angular/material/snack-bar";
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
     MatPaginatorModule,
     MatSortModule,
     MatMenuModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

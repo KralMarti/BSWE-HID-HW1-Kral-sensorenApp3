@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormsModule, UntypedFormBuilder, UntypedFormGroup, Validators} from '@angular/forms';
 import { BackendService } from 'src/app/shared/backend.service';
 import { StoreService } from 'src/app/shared/store.service';
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-add-sensors-data',
@@ -10,7 +11,7 @@ import { StoreService } from 'src/app/shared/store.service';
 })
 export class AddSensorsDataComponent implements OnInit {
 
-  constructor(public storeService: StoreService, private formBuilder: UntypedFormBuilder, public backendService: BackendService) { }
+  constructor(public storeService: StoreService, private formBuilder: UntypedFormBuilder, public backendService: BackendService, private _snackBar: MatSnackBar) { }
   public sensorenDataForm: any;
 
   ngOnInit(): void {
@@ -28,6 +29,9 @@ export class AddSensorsDataComponent implements OnInit {
       await this.backendService.addSensorsData(this.sensorenDataForm.value);
       this.sensorenDataForm.reset()
       this.storeService.isLoading = false;
+      this._snackBar.open("Eintrag erfolgreich hinzugefügt!", "schließen", {
+        duration: 3000
+      })
     }
 
 

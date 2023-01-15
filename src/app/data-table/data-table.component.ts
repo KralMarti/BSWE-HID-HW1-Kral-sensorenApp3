@@ -7,6 +7,7 @@ import {StoreService} from "../shared/store.service";
 import {Subscription} from "rxjs";
 import {BackendService} from "../shared/backend.service";
 import { SensorPosition } from '../Sensor';
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 
 @Component({
@@ -29,7 +30,7 @@ export class DataTableComponent implements AfterViewInit, OnDestroy {
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['id', 'sensor', 'date', 'temperature', 'humidity', 'location', 'position', 'delete'];
   pageSizes = [5, 10, 20];
-  constructor(private storeService: StoreService, private backendService: BackendService) {
+  constructor(private storeService: StoreService, private backendService: BackendService, private _snackBar: MatSnackBar) {
   }
 
   ngAfterViewInit(): void {
@@ -47,5 +48,8 @@ export class DataTableComponent implements AfterViewInit, OnDestroy {
     this.storeService.isLoading = true;
     await this.backendService.deleteSensorsDaten(id);
     this.storeService.isLoading = false;
+    this._snackBar.open("Eintrag erfolgreich gelöscht!", "schließen", {
+      duration: 3000
+    })
   }
 }
