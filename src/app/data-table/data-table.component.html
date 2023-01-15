@@ -44,11 +44,21 @@
 
     <!-- Eintrag Löschen -->
     <ng-container matColumnDef="delete">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Löschen</th>
-      <td mat-cell *matCellDef="let row"><mat-icon color="warn" (click)="deleteSensordata(row.id)">delete</mat-icon></td>
-
+      <th mat-header-cell *matHeaderCellDef>Löschen</th>
+      <td mat-cell *matCellDef="let row">
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon color="warn">delete</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="deleteSensordata(row.id)">
+            Ok
+          </button>
+          <button mat-menu-item>
+            Abbrechen
+          </button>
+        </mat-menu>
+      </td>
     </ng-container>
-
 
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

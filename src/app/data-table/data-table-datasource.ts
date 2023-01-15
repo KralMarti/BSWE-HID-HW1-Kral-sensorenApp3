@@ -12,8 +12,6 @@ export interface DataTableItem {
   sensor: Sensor;
   temperature: number;
   humidity: number;
-  location: string;
-  position: string;
 
 }
 
@@ -87,9 +85,9 @@ export class DataTableDataSource extends DataSource<DataTableItem> {
         case 'id': return compare(+a.id, +b.id, isAsc);
         case 'temperature': return compare(+a.temperature, +b.temperature, isAsc);
         case 'humidity': return compare(+a.humidity, +b.humidity, isAsc);
-        case 'sensor': return compare(+a.sensor, +b.sensor, isAsc);
-        case 'location': return compare(+a.location, +b.location, isAsc);
-        case 'position': return compare(+a.position, +b.position, isAsc);
+        case 'sensor': return compare(+a.sensor.name, +b.sensor.name, isAsc);
+        case 'location': return compare(+a.sensor.location, +b.sensor.location, isAsc);
+        case 'position': return compare(+a.sensor.position, +b.sensor.position, isAsc);
         default: return 0;
       }
     });

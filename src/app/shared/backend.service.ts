@@ -18,6 +18,7 @@ export class BackendService {
   public async getSensoren() {
     this.sensoren = await firstValueFrom(this.http.get<Sensor[]>('http://localhost:5000/sensors'));
     this.storeService.sensoren = this.sensoren;
+    console.info(this.storeService);
   }
 
   public async getSensorenDaten() {

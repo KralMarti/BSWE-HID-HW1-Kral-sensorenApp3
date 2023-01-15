@@ -22,6 +22,7 @@ import { DataTableComponent } from './data-table/data-table.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import {MatMenuModule} from "@angular/material/menu";
 
 @NgModule({
   declarations: [
@@ -34,24 +35,25 @@ import { MatSortModule } from '@angular/material/sort';
     AboutPageComponent,
     DataTableComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatIconModule,
-    BrowserAnimationsModule,
-    MatFormFieldModule,
-    MatButtonModule,
-    MatInputModule,
-    MatSelectModule,
-    MatNativeDateModule,
-    MatDatepickerModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatIconModule,
+        BrowserAnimationsModule,
+        MatFormFieldModule,
+        MatButtonModule,
+        MatInputModule,
+        MatSelectModule,
+        MatNativeDateModule,
+        MatDatepickerModule,
+        MatTableModule,
+        MatPaginatorModule,
+        MatSortModule,
+        MatMenuModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
