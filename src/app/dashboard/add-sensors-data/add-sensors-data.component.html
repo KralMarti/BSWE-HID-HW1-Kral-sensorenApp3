@@ -1,18 +1,3 @@
-<!--<form [formGroup]="sensorenDataForm" (ngSubmit)="onSubmit()">
-  <h2>Neuen Messwert hinzufügen</h2>
-  <select formControlName="sensorId">
-    <option value="" disabled>Bitte Sensor auswählen</option>
-    <option *ngFor="let item of storeService.sensoren" [ngValue]="item.id">{{item?.name}}</option>
-  </select>
-  <input placeholder="Datum" type="date" name="datum" formControlName="date">
-  <input placeholder="Temperatur" type="number" name="Temperatur" formControlName="temperature">
-  <input placeholder="Luftfeuchtigkeit" type="number" name="Luftfeutigkeit" formControlName="humidity">
-
-  <button class="btn btn-primary" type="submit">
-    Erfassen
-  </button>
-</form>-->
-
 <div class="forms-container">
   <h2>Neuen Messwert hinzufügen</h2>
   <form [formGroup]="sensorenDataForm" (ngSubmit)="onSubmit()">
